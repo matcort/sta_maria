@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  direccion: MyString
+  numero: 1
+  comentarios: MyText
+  estadoArriendo: false
+
+two:
+  direccion: MyString
+  numero: 1
+  comentarios: MyText
+  estadoArriendo: false

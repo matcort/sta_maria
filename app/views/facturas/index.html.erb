@@ -1,0 +1,48 @@
+<%- model_class = Factura -%>
+<div class="page-header">
+  <h1><%=t '.title', default: model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:nBoleta) %></th>
+      <th><%= model_class.human_attribute_name(:estado) %></th>
+      <th><%= model_class.human_attribute_name(:firmaAdmin) %></th>
+      <th><%= model_class.human_attribute_name(:firmaArrendatario) %></th>
+      <th><%= model_class.human_attribute_name(:fechaPago) %></th>
+      <th><%= model_class.human_attribute_name(:tipoPago) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', default: t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @facturas.each do |factura| %>
+      <tr>
+        <td><%= factura.id %></td>
+          <td><%= factura.nBoleta %></td>
+          <td><%= factura.estado %></td>
+          <td><%= factura.firmaAdmin %></td>
+          <td><%= factura.firmaArrendatario %></td>
+          <td><%= factura.fechaPago %></td>
+          <td><%= factura.tipoPago %></td>
+        <td><%=l factura.created_at, format: :long %></td>
+        <td>
+          <%= link_to factura_path(factura), class: 'btn btn-xs', title: "#{ t('.show', default: t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+          <%- end -%>
+          <%= link_to edit_factura_path(factura), class: 'btn btn-xs', title: "#{ t('.edit', default: t('helpers.links.edit')) }" do %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to factura_path(factura), method: :delete, data: { confirm: t('.confirm', default: t("helpers.links.confirm", default: 'Are you sure?')) }, class: 'btn btn-xs', title: "#{ t('.destroy', default: t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', default: t("helpers.links.new")),
+            new_factura_path,
+            class: 'btn btn-primary' %>

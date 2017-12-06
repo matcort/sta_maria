@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tipo: 1
+  nombre: MyString
+  comentario: MyText
+  local: one
+  factura: one
+
+two:
+  tipo: 1
+  nombre: MyString
+  comentario: MyText
+  local: two
+  factura: two

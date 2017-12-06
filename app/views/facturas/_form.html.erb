@@ -1,0 +1,46 @@
+<%= form_for @factura, html: { class: 'form-horizontal' } do |f| %>
+  <div class="form-group">
+    <%= f.label :nBoleta, class: 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :nBoleta, class: 'text_field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :estado, class: 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :estado, class: 'text_field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :firmaAdmin, class: 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :firmaAdmin, class: 'text_field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :firmaArrendatario, class: 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :firmaArrendatario, class: 'text_field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :fechaPago, class: 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :fechaPago, class: 'text_field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :tipoPago, class: 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :tipoPago, class: 'text_field form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, class: 'btn btn-primary' %>
+      <%= link_to t('.cancel', default: t("helpers.links.cancel")),
+                  facturas_path, class: 'btn btn-default' %>
+    </div>
+  </div>
+<% end %>

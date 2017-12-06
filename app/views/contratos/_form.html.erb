@@ -1,0 +1,58 @@
+<%= form_for @contrato, html: { class: 'form-horizontal' } do |f| %>
+  <div class="form-group">
+    <%= f.label :fechaInicio, class: 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :fechaInicio, class: 'text_field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :fechaFin, class: 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :fechaFin, class: 'text_field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :montoArriendo, class: 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :montoArriendo, class: 'text_field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :documento, class: 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :documento, class: 'text_field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :estado, class: 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :estado, class: 'text_field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :arrendatario_id, class: 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :arrendatario_id, class: 'text_field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :administrador_id, class: 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :administrador_id, class: 'text_field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :local_id, class: 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :local_id, class: 'text_field form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, class: 'btn btn-primary' %>
+      <%= link_to t('.cancel', default: t("helpers.links.cancel")),
+                  contratos_path, class: 'btn btn-default' %>
+    </div>
+  </div>
+<% end %>

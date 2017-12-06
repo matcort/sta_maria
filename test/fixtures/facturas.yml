@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nBoleta: 1
+  estado: 1
+  firmaAdmin: false
+  firmaArrendatario: false
+  fechaPago: 2017-11-07
+  tipoPago: MyString
+
+two:
+  nBoleta: 1
+  estado: 1
+  firmaAdmin: false
+  firmaArrendatario: false
+  fechaPago: 2017-11-07
+  tipoPago: MyString

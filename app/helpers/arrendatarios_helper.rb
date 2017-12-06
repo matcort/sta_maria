@@ -1,0 +1,2 @@
+module ArrendatariosHelper
+end

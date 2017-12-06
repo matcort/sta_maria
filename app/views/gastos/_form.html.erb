@@ -1,0 +1,40 @@
+<%= form_for @gasto, html: { class: 'form-horizontal' } do |f| %>
+  <div class="form-group">
+    <%= f.label :tipo, class: 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :tipo, class: 'text_field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :nombre, class: 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :nombre, class: 'text_field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :comentario, class: 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :comentario, class: 'text_field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :local_id, class: 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :local_id, class: 'text_field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :factura_id, class: 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :factura_id, class: 'text_field form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, class: 'btn btn-primary' %>
+      <%= link_to t('.cancel', default: t("helpers.links.cancel")),
+                  gastos_path, class: 'btn btn-default' %>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,28 @@
+<%= form_for @mes_garantium, html: { class: 'form-horizontal' } do |f| %>
+  <div class="form-group">
+    <%= f.label :fecha, class: 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :fecha, class: 'text_field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :monto, class: 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :monto, class: 'text_field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :local_id, class: 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :local_id, class: 'text_field form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, class: 'btn btn-primary' %>
+      <%= link_to t('.cancel', default: t("helpers.links.cancel")),
+                  mes_garantia_path, class: 'btn btn-default' %>
+    </div>
+  </div>
+<% end %>

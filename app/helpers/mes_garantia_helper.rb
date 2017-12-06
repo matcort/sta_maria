@@ -1,0 +1,2 @@
+module MesGarantiaHelper
+end
