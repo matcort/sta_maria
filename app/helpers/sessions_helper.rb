@@ -6,13 +6,11 @@ module SessionsHelper
     if user.class.to_s == "Administrador"
       session[:admin_id] = user.id
       session[:arren_id] = nil
-      puts"acaaa administrador: "
-      puts session[:admin_id]
+    #  puts session[:admin_id]
     elsif user.class.to_s=="Arrendatario"
       session[:arren_id] = user.id
       session[:admin_id]=nil
-       puts"acaaa arrendatario: "
-      puts session[:arren_id]
+      #puts session[:arren_id]
     end
 
     

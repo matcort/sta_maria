@@ -20,6 +20,11 @@ class ContratosController < ApplicationController
   # GET /contratos/1/edit
   def edit
   end
+  
+  def calendar
+  @date = params[:date] || Date.today
+  # will set @date to Date.today if params[:date].nil?
+end 
 
   # POST /contratos
   # POST /contratos.json

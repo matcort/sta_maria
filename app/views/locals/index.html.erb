@@ -1,28 +1,43 @@
+
 <%- model_class = Local -%>
-<div class="page-header">
-  <h1><%=t '.title', default: model_class.model_name.human.pluralize.titleize %></h1>
+
+
+
+<div class="container">
+  <div class="page-header">
+  <h1>Locales y Oficinas</h1>
 </div>
+ <h2> Panel principal de administración</h2>
+  <ul class="nav nav-pills">
+    <li class="active"><a data-toggle="pill" href="#home">Locales 347</a></li>
+    <li><a data-toggle="pill" href="#menu1">Locales 363</a></li>
+  </ul>
+  
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <h3>LOCALES 347</h3>
+      
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:direccion) %></th>
-      <th><%= model_class.human_attribute_name(:numero) %></th>
+      <!--<th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:direccion) %></th> -->
+      <th>Local N°</th> 
+      <th>Arrendatario</th>
       <th><%= model_class.human_attribute_name(:comentarios) %></th>
-      <th><%= model_class.human_attribute_name(:estadoArriendo) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th>Estado</th>
       <th><%=t '.actions', default: t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @locals.each do |local| %>
       <tr>
-        <td><%= local.id %></td>
-          <td><%= local.direccion %></td>
+        <!--<td><%= local.id %></td>
+          <td><%= local.direccion %></td> -->
           <td><%= local.numero %></td>
+          <td>  <%= local.arrendatario%></td>
           <td><%= local.comentarios %></td>
           <td><%= local.estadoArriendo %></td>
-        <td><%=l local.created_at, format: :long %></td>
         <td>
           <%= link_to local_path(local), class: 'btn btn-xs', title: "#{ t('.show', default: t('helpers.links.show')) }" do %>
             <%= glyph 'info-sign' %>
@@ -33,6 +48,12 @@
           <%= link_to local_path(local), method: :delete, data: { confirm: t('.confirm', default: t("helpers.links.confirm", default: 'Are you sure?')) }, class: 'btn btn-xs', title: "#{ t('.destroy', default: t('helpers.links.destroy')) }" do %>
             <%= glyph 'remove' %>
           <%- end -%>
+          <%= link_to "Nuevo Contrato", new_contrato_path(local), class: 'btn btn-info' %>
+            
+            
+
+          
+          
         </td>
       </tr>
     <% end %>
@@ -42,3 +63,17 @@
 <%= link_to t('.new', default: t("helpers.links.new")),
             new_local_path,
             class: 'btn btn-primary' %>
+
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <h3>LOCALES 363</h3>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    
+  </div>
+</div>
+
+
+
+
+
