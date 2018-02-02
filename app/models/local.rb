@@ -1,5 +1,5 @@
 class Local < ApplicationRecord
-    has_one :contrato
-    has_one :arrendatario, :through => :contrato
+    has_many :contrato
+    has_many :arrendatario, :through => :contrato
     
 end

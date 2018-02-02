@@ -5,11 +5,13 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
 
   resources :facturas
-  resources :contratos
   resources :administradors
   resources :arrendatarios
   resources :mes_garantia
   resources :gastos
-  resources :locals
+  resources :locals do
+    resources :contratos
+  end
+    
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

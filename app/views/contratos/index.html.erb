@@ -19,7 +19,10 @@
     </tr>
   </thead>
   <tbody>
-    <% @contratos.each do |contrato| %>
+    <% 
+        @contratos= (@local.contrato.nil?)? ["",""] : @local.contrato
+        #@local.contrato.each do |contrato| 
+       @contratos.each do |contrato| %>
       <tr>
         <td><%= contrato.id %></td>
           <td><%= contrato.fechaInicio %></td>
@@ -32,13 +35,13 @@
           <td><%= contrato.local_id %></td>
         <td><%=l contrato.created_at, format: :long %></td>
         <td>
-          <%= link_to contrato_path(contrato), class: 'btn btn-xs', title: "#{ t('.show', default: t('helpers.links.show')) }" do %>
+          <%= link_to local_contrato_path(@local, contrato), class: 'btn btn-xs', title: "#{ t('.show', default: t('helpers.links.show')) }" do %>
             <%= glyph 'info-sign' %>
           <%- end -%>
-          <%= link_to edit_contrato_path(contrato), class: 'btn btn-xs', title: "#{ t('.edit', default: t('helpers.links.edit')) }" do %>
+          <%= link_to local_edit_contrato_path(@local, contrato), class: 'btn btn-xs', title: "#{ t('.edit', default: t('helpers.links.edit')) }" do %>
             <%= glyph 'pencil' %>
           <%- end -%>
-          <%= link_to contrato_path(contrato), method: :delete, data: { confirm: t('.confirm', default: t("helpers.links.confirm", default: 'Are you sure?')) }, class: 'btn btn-xs', title: "#{ t('.destroy', default: t('helpers.links.destroy')) }" do %>
+          <%= link_to local_contrato_path(@local, contrato), method: :delete, data: { confirm: t('.confirm', default: t("helpers.links.confirm", default: 'Are you sure?')) }, class: 'btn btn-xs', title: "#{ t('.destroy', default: t('helpers.links.destroy')) }" do %>
             <%= glyph 'remove' %>
           <%- end -%>
         </td>
@@ -48,5 +51,5 @@
 </table>
 
 <%= link_to t('.new', default: t("helpers.links.new")),
-            new_contrato_path,
+            new_local_contrato_path,
             class: 'btn btn-primary' %>

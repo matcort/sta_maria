@@ -32,10 +32,10 @@
   <tbody>
     <% @locals.each do |local| %>
       <tr>
-        <!--<td><%= local.id %></td>
-          <td><%= local.direccion %></td> -->
+        <td><%= local.id %></td>
+         <!-- <td><%= local.direccion %></td> -->
           <td><%= local.numero %></td>
-          <td>  <%= local.arrendatario%></td>
+          <td>  <%= local_arrendatario(local.id)  %></td>
           <td><%= local.comentarios %></td>
           <td><%= local.estadoArriendo %></td>
         <td>
@@ -48,7 +48,7 @@
           <%= link_to local_path(local), method: :delete, data: { confirm: t('.confirm', default: t("helpers.links.confirm", default: 'Are you sure?')) }, class: 'btn btn-xs', title: "#{ t('.destroy', default: t('helpers.links.destroy')) }" do %>
             <%= glyph 'remove' %>
           <%- end -%>
-          <%= link_to "Nuevo Contrato", new_contrato_path(local), class: 'btn btn-info' %>
+          <%= link_to "Nuevo Contrato", new_local_contrato_path(local), class: 'btn btn-info' %>
             
             
 

@@ -28,6 +28,7 @@ gem 'bcrypt',         '3.1.11'
 gem 'bootstrap-sass', '3.3.7'
 gem 'bootstrap-sass-extras'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+gem 'bootstrap-datepicker-rails'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -58,6 +59,7 @@ group :test do
   gem 'minitest-reporters', '1.0.5'
   gem 'mini_backtrace',     '0.1.3'
   gem 'guard-minitest',     '2.3.1'
+  gem "faker"
 end
 
 group :production do

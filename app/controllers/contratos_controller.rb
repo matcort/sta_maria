@@ -1,9 +1,11 @@
 class ContratosController < ApplicationController
-  before_action :set_contrato, only: [:show, :edit, :update, :destroy]
+  before_action :set_contrato,  only: [:show, :edit, :update, :destroy]
+  before_action :set_local
 
   # GET /contratos
   # GET /contratos.json
   def index
+   #@local = Local.find(params[:local_id])
     @contratos = Contrato.all
   end
 
@@ -14,7 +16,9 @@ class ContratosController < ApplicationController
 
   # GET /contratos/new
   def new
-    @contrato = Contrato.new
+    
+    #@local=Local.find(params[:local_id])
+    @contrato = @local.contrato.build
   end
 
   # GET /contratos/1/edit
@@ -29,11 +33,11 @@ end
   # POST /contratos
   # POST /contratos.json
   def create
-    @contrato = Contrato.new(contrato_params)
+    @contrato= @local.contrato.build(contrato_params)
 
     respond_to do |format|
       if @contrato.save
-        format.html { redirect_to @contrato, notice: 'Contrato was successfully created.' }
+        format.html { redirect_to [@local, @contrato], notice: 'Contrato was successfully created.' }
         format.json { render :show, status: :created, location: @contrato }
       else
         format.html { render :new }
@@ -47,7 +51,7 @@ end
   def update
     respond_to do |format|
       if @contrato.update(contrato_params)
-        format.html { redirect_to @contrato, notice: 'Contrato was successfully updated.' }
+        format.html { redirect_to [@local, @contrato], notice: 'Contrato was successfully updated.' }
         format.json { render :show, status: :ok, location: @contrato }
       else
         format.html { render :edit }
@@ -70,6 +74,9 @@ end
     # Use callbacks to share common setup or constraints between actions.
     def set_contrato
       @contrato = Contrato.find(params[:id])
+    end
+    def set_local
+      @local=Local.find(params[:local_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
