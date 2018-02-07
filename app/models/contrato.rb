@@ -1,7 +1,9 @@
 class EstadoValidator < ActiveModel::Validator
   def validate(record)
     if record.estado == true 
-      (Contrato.where(estado:true, local_id: record.local_id).count >= 1)? record.errors[:base] << "Ya existe un contrato vigente en este local" : ""
+      if Contrato.where(estado:true, local_id: record.local_id).count >= 1
+        record.errors[:base] << "Ya existe un contrato vigente en este local" 
+      end
       
     end
   end
