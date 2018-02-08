@@ -21,7 +21,9 @@ module LocalsHelper
         if contractId.nil?
             link_to "Nuevo Contrato", new_local_contrato_path(local), class: 'btn btn-info'
         else
-            (local.estadoArriendo)? (link_to local_contrato_path(local.id, contractId), method: :delete, data: { confirm: t('.confirm', default: t("helpers.links.confirm", default: 'Are you sure?')) }, class: 'btn btn-xs', title: "#{ t('.destroy', default: t('helpers.links.destroy')) }") : (link_to "Nuevo Contrato", new_local_contrato_path(local), class: 'btn btn-info')
+            #(local.estadoArriendo)? (link_to "Ver contrato", local_contrato_path(local.id, contractId),  class: 'btn btn-info') : (link_to "Nuevo Contrato", new_local_contrato_path(local), class: 'btn btn-info')
+            #no es necesario el op. ternario ya que comprobamos en el helper anterior la existencia del contrato
+            (link_to "Nuevo Contrato", new_local_contrato_path(local), class: 'btn btn-info')
         end        
     end
     
