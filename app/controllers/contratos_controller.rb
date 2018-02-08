@@ -7,6 +7,7 @@ class ContratosController < ApplicationController
   def index
    #@local = Local.find(params[:local_id])
     @contratos = Contrato.all
+    
   end
 
   # GET /contratos/1
