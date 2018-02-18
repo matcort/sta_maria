@@ -32,18 +32,19 @@
   </thead>
   <tbody>
     <% @locals.each do |local| %>
+      <% datos=link_to_arrend_contract(local)  %> 
       <tr>
         <td><%= local.id %></td>
          <!-- <td><%= local.direccion %></td> -->
           <td><%= local.numero %></td>
           <td>  
-              <% @datos=link_to_arrend_contract(local)  %> 
-              <%= @datos[:link_to_arrend]%>   
+              
+              <%= datos[:link_to_arrend]%>   
           </td>
           <td><%= local.comentarios %></td>
           <td><%= local.estadoArriendo %></td>
           <td>
-              <%= @datos[:active_contract]%>
+              <%= datos[:active_contract]%>
           </td>
           <td> gastos</td>
       </tr>
