@@ -16,11 +16,11 @@
       <dt class="label label-default"><%= model_class.human_attribute_name(:estado) %></dt>
       <dd><pre class="prettyprint"><%= @contrato.estado %></pre></dd>
       <dt class="label label-default"><%= model_class.human_attribute_name(:arrendatario_id) %></dt>
-      <dd><pre class="prettyprint"><%= @contrato.arrendatario_id %></pre></dd>
+      <dd><pre class="prettyprint"><%= @contrato.arrendatario.nombre %></pre></dd>
       <dt class="label label-default"><%= model_class.human_attribute_name(:administrador_id) %></dt>
-      <dd><pre class="prettyprint"><%= @contrato.administrador_id %></pre></dd>
+      <dd><pre class="prettyprint"><%= @contrato.administrador.nombre %></pre></dd>
       <dt class="label label-default"><%= model_class.human_attribute_name(:local_id) %></dt>
-      <dd><pre class="prettyprint"><%= @contrato.local_id %></pre></dd>
+      <dd><pre class="prettyprint"><%= @contrato.local.numero %></pre></dd>
   </dl>
 </div>
 
@@ -29,7 +29,7 @@
               local_contratos_path, class: 'btn btn-default'  %>
   <%= link_to t('.edit', default: t("helpers.links.edit")),
               edit_local_contrato_path(@local, @contrato), class: 'btn btn-default' %>
-  <%= link_to t('.destroy', default: t("helpers.links.destroy")),
+  <%= link_to "Eliminar Contrato",
               local_contrato_path(@local, @contrato),
               method: 'delete',
               data: { confirm: t('.confirm', default: t("helpers.links.confirm", default: 'Are you sure?')) },

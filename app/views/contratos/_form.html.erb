@@ -42,7 +42,8 @@
   <div class="form-group">
     <%= f.label :estado, class: 'control-label col-md-2' %>
     <div class="col-md-10">
-      <%= f.text_field :estado, class: 'text_field form-control' %>
+      <%#= f.text_field :estado, class: 'text_field form-control' %>
+      <%= f.select :estado, options_for_select([["Activo", true],["Inactivo", false]], "Activo"), class: 'text_field form-control' %>
     </div>
   </div>
   <div class="form-group">

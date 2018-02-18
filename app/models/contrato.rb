@@ -20,10 +20,13 @@ class Contrato < ApplicationRecord
     validates_inclusion_of :estado, :in => [true, false]
     validates_with EstadoValidator, fields: [:estado, :local_id], on: [:create]
     
-    after_commit do
+    after_commit on: [:create, :update] do
       Local.find(self.local.id).update(estadoArriendo: (self.estado)? true : false)
     end
    
+    after_destroy do
+       Local.find(self.local.id).update(estadoArriendo: false)
+   end
 
 end
 

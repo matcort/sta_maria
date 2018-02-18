@@ -66,7 +66,7 @@ end
   def destroy
     @contrato.destroy
     respond_to do |format|
-      format.html { redirect_to [@local, @contrato], notice: 'Contrato was successfully destroyed.' }
+      format.html { redirect_to [@local, @contrato], notice: 'Término de contrato realizado.' }
       format.json { head :no_content }
     end
   end
