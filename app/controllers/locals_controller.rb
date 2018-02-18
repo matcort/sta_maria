@@ -5,6 +5,7 @@ class LocalsController < ApplicationController
   # GET /locals.json
   def index
     @locals = Local.all
+    
   end
 
   # GET /locals/1
@@ -25,7 +26,6 @@ class LocalsController < ApplicationController
   # POST /locals.json
   def create
     @local = Local.new(local_params)
-
     respond_to do |format|
       if @local.save
         format.html { redirect_to @local, notice: 'Local was successfully created.' }

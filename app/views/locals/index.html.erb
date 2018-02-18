@@ -21,14 +21,13 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <!--<th><%= model_class.human_attribute_name(:direccion) %></th> -->
+      <!--<th><%#= model_class.human_attribute_name(:direccion) %></th> -->
       <th>Local N°</th> 
       <th>Arrendatario</th>
       <th><%= model_class.human_attribute_name(:comentarios) %></th>
       <th>Estado</th>
       <th>Contrato</th>
       <th>Gastos</th>
-     
     </tr>
   </thead>
   <tbody>
@@ -38,14 +37,13 @@
          <!-- <td><%= local.direccion %></td> -->
           <td><%= local.numero %></td>
           <td>  
-              <%@local_arrendatario=local_arrendatario_contrato(local.id)  %> <%#= link_to local_arrendatario(local.id), arrendatario(@)%>
-               <%=@local_arrendatario[:link_to_arrend]  %>    
+              <% @datos=link_to_arrend_contract(local)  %> 
+              <%= @datos[:link_to_arrend]%>   
           </td>
           <td><%= local.comentarios %></td>
           <td><%= local.estadoArriendo %></td>
           <td>
-              <%#= link_to "Nuevo Contrato", new_local_contrato_path(local), class: 'btn btn-info' %>
-              <%= estadoContratoActivo(local, @local_arrendatario[:local_active_contract] ) %>
+              <%= @datos[:active_contract]%>
           </td>
           <td> gastos</td>
       </tr>
