@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171213142552) do
+ActiveRecord::Schema.define(version: 20180220155624) do
 
   create_table "administradors", force: :cascade do |t|
     t.string "nombre"
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 20171213142552) do
     t.integer "factura_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "monto"
     t.index ["factura_id"], name: "index_gastos_on_factura_id"
     t.index ["local_id"], name: "index_gastos_on_local_id"
   end
