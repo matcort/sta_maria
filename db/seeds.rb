@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require "faker"
-=begin
+
 Administrador.create(nombre:"Matias", rut:"123456", telefono:"1234567",mail:"matias@gmail.com", password:"123456", password_confirmation: "123456")
 Arrendatario.create(nombre:"Sebastian", rut:"1234567", telefono:"1234567",mail:"sebastian@gmail.com", password:"123456", password_confirmation: "123456")
 estado=nil
@@ -28,14 +28,14 @@ Contrato.create(fechaInicio: Faker::Date.forward(23), fechaFin:Faker::Date.forwa
 end
 
 
-#[8,9,10,11,12,13,14,15,16].each do |n|
+[8,9,10,11,12,13,14,15,16].each do |n|
     
-#   Contrato.create(fechaInicio: Faker::Date.forward(23), fechaFin:Faker::Date.forward(23), montoArriendo:Faker::Number.number(6), documento: nil, estado: true, arrendatario_id:n, administrador_id:1, local_id: n)
-#end    
+ Contrato.create(fechaInicio: Faker::Date.forward(23), fechaFin:Faker::Date.forward(23), montoArriendo:Faker::Number.number(6), documento: nil, estado: true, arrendatario_id:n, administrador_id:1, local_id: n)
+end    
 #Local.create(direccion:"Santa María 363", numero:)
 
 #Contrato.create(fechaInicio: Faker::Date.forward(23), fechaFin:Faker::Date.forward(23), montoArriendo:Faker::Number.number(6), documento: nil, estado: true, arrendatario_id:16, administrador_id:1, local_id: 211)
-=end
+
 
 Gasto.create(local_id: 1, nombre: "Gasto1", monto:5000)
 Gasto.create(local_id: 1, nombre: "Gasto2", monto:4000)

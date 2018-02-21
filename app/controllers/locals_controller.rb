@@ -5,7 +5,6 @@ class LocalsController < ApplicationController
   # GET /locals.json
   def index
     @locals = Local.all
-    
   end
 
   # GET /locals/1

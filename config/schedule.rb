@@ -18,3 +18,12 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
+
+#set :output, {:error => "log/cron_error_log.log", :standard => "log/cron_log.log"}
+set :environment, "development"
+set :output, { error: 'error.log', standard: 'cron.log' }
+
+every 1.minute do
+        
+ rake "gastos_gen:mensualidad"
+end
